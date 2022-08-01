@@ -1,4 +1,6 @@
 const router = require('nordic/ragnar').router();
+const productList = require('../../utils/mockProducts');
+const { getPath } = require('./middleware');
 /**
  * Vamos a “simular” una llamada a la API de MeLi (por el momento,
  * no vamos a interactuar con la API oficial, eso vamos a hacerlo 
@@ -27,8 +29,12 @@ const router = require('nordic/ragnar').router();
  ********************************************************************************
  */
 
-router.get('/', (req, res) => {
-
+// api/products/ Para poder ingresar a esa ruta
+router.get('/:category?',getPath, (req, res) => {
+    res.json({
+        category:res.locals.category,
+        products: productList
+    });
 });
 
 module.exports = router;

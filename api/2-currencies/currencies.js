@@ -1,3 +1,6 @@
+const router = require('nordic/ragnar').router();
+const {supportedCurrencies} = require('./middlewares');
+
 /** 
  * Ejercicio 2 - Crear un endpoint /api/currencies
  * 
@@ -18,3 +21,11 @@
  * `npm run test:unit:watch currencies-route` y comprobar que pasan todos los tests.
  ***********************************************************************************
  */
+
+ router.get('/', supportedCurrencies, (req, res) => {
+    console.log(res.locals.currencies, 'eeeeeeeeee')
+    res.json(res.locals.currencies);
+});
+
+
+module.exports = router;

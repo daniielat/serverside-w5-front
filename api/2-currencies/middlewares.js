@@ -11,6 +11,8 @@
  ********************************************************/
 
 exports.logPath = function logPath(req, res, next) {
+  const route = req.path;
+  console.log(route);
   next();
 }
 
@@ -30,3 +32,8 @@ exports.logPath = function logPath(req, res, next) {
  * comprobar que pasa el test `2) supportedCurrencies`.
  ********************************************************/
 
+
+ exports.supportedCurrencies = function supportedCurrencies(req,res,next){
+  res.locals.currencies =  ["EUR", "USD"];
+  next();
+ }
