@@ -15,12 +15,15 @@
  });
 
  class ServiceProduct{
-    static getProducts(name, siteID){
+    static getProducts(name, siteID, limit){
         // https://internal-api.mercadolibre.com - URL fija
         // sites/MLA/search?q=phone URL variable
-        return restClient.get(`/sites/${siteID}/search?q=${name}`)
+        return restClient.get(`/sites/${siteID}/search?q=${name}&limit=${limit}`)
             .then(response => response.data.results)
+            .catch(err => console.log(err))
     }
  }
+
+
 
  module.exports = ServiceProduct;
