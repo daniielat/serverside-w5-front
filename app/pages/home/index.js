@@ -1,5 +1,5 @@
 const router = require('nordic/ragnar').router();
-const { render } = require('./controller');
+const { render, serviceProducts } = require('./controller');
 
 /**
  * En esta carpeta deberás crear la page para la ruta /home, 
@@ -13,7 +13,7 @@ const { render } = require('./controller');
  ******************************************************************************
  */
 
- router.get('/', render);
+ router.get('/', serviceProducts, render);
 
  module.exports = router;
 //

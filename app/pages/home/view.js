@@ -1,10 +1,14 @@
 const React = require('react');
 
 function View (props) {
-    const { message } = props;
+    const { message , products} = props;
 
-    return(
-        <h2>{message}</h2>
+    return (
+        <>
+            {
+                products.length > 0 && products.map(product => product.title)
+            }
+        </>
     )
 }
 
