@@ -1,6 +1,6 @@
 const React = require('react');
 
-///Creamos la View y le pasamos los props
+///Creamos la View y le pasamos los props *****
 function View(props){
     const { title } = props; // Desestructurar las props
 
